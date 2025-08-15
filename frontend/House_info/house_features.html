@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Feature Input</title>
+    <link rel="stylesheet" href="house_features.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">    
+</head>
+
+    <h2>Enter Building Feature</h2>
+    
+    <div class="form">
+        <!-- <div>
+            <label for="building_name" data-name="b_name" style="text-align: center; font-size: 25px; margin-bottom: 70px;">Building Name:</label>
+        </div> -->
+
+        <!-- Row for Fuel and Gas -->
+        <div class="row">
+            <div class="input-group">
+                <label for="feature_value1" id="FUEL" data-name="FUEL">FUEL: </label>
+                <input type="number" id="feature_value1" name="feature_value1" required>
+                <button id="submit1" class="submit1">Add</button>
+            </div>
+            <div class="input-group">
+                <label for="feature_value2" id="GAS" data-name="GAS">GAS: </label>
+                <input type="number" id="feature_value2" name="feature_value2" required>
+                <button id="submit2" class="submit2">Add</button>
+            </div>
+        </div>
+
+        <!-- Row for Electricity and Water Heating -->
+        <div class="row">
+            <div class="input-group">
+                <label for="feature_value3" id="ELECTRICITY" data-name="ELECTRICITY">ELECTRICITY: </label>
+                <input type="number" id="feature_value3" name="feature_value3" required>
+                <button id="submit3" class="submit3">Add</button>
+            </div>
+            <div class="input-group">
+                <label for="feature_value4" id="WATER HEATING" data-name="WATER HEATING">WATER HEATING: </label>
+                <input type="number" id="feature_value4" name="feature_value4" required>
+                <button id="submit4" class="submit4">Add</button>
+            </div>
+        </div>
+
+        <!-- Row for Cooking Stove and Air Conditioning -->
+        <div class="row">
+            <div class="input-group">
+                <label for="feature_value5" id="COOKING STOVE" data-name="COOKING STOVE">COOKING STOVE: </label>
+                <input type="number" id="feature_value5" name="feature_value5" required>
+                <button id="submit5" class="submit5">Add</button>
+            </div>
+            <div class="input-group">
+                <label for="feature_value6" id="AIR CONDITIONING" data-name="AIR CONDITIONING">AIR CONDITIONING: </label>
+                <input type="number" id="feature_value6" name="feature_value6" required>
+                <button id="submit6" class="submit6">Add</button>
+            </div>
+        </div>
+
+        <!-- Row for Heating and Vehicle Fuel -->
+        <div class="row">
+            <div class="input-group">
+                <label for="feature_value7" id="HEATING" data-name="HEATING">HEATING: </label>
+                <input type="number" id="feature_value7" name="feature_value7" required>
+                <button id="submit7" class="submit7">Add</button>
+            </div>
+            <div class="input-group">
+                <label for="feature_value8" id="VEHICLE FUEL" data-name="VEHICLE FUEL">VEHICLE FUEL: </label>
+                <input type="number" id="feature_value8" name="feature_value8" required>
+                <button id="submit8" class="submit8">Add</button>
+            </div>
+        </div>
+
+        <!-- Row for Lighting and Electronics -->
+        <div class="row">
+            <div class="input-group">
+                <label for="feature_value9" id="LIGHTING" data-name="LIGHTING">LIGHTING: </label>
+                <input type="number" id="feature_value9" name="feature_value9" required>
+                <button id="submit9" class="submit9">Add</button>
+            </div>
+            <div class="input-group">
+                <label for="feature_value10" id="ELECTRONICS" data-name="ELECTRONICS">ELECTRONICS: </label>
+                <input type="number" id="feature_value10" name="feature_value10" required>
+                <button id="submit10" class="submit10">Add</button>
+            </div>
+        </div>
+
+        <div class="center-container">
+            <button id="calculate">Calculate</button>
+            <div id="result" class="result">Result</div>
+        </div>
+    </div>
+    
+
+    <script src="house_features.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="B_info.css">
+    <title>Building Information</title>
+</head>
+<body>
+    <form id="buildingForm">
+        <h1>Add Details of the Building</h1>
+        <div class="input-group">
+            <label for="b_name" data-name="b_name">Building Name</label>
+            <input type="text" id="b_name" name="b_name" required>
+        </div>
+        <br>
+
+        <div class="input-group">
+            <label for="size_sqft" data-name="size_sqft">Size (Sqft)</label>
+            <input type="text" id="size_sqft" name="size_sqft" required>
+        </div>
+        <br>
+
+        <div class="input-group">
+            <label for="location" data-name="location">Location</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <br>
+
+        <button id="b_info" type="button" class="submit">Submit</button>
+    </form>
+    <script>
+        // JavaScript to handle the button click and prevent form submission
+        const b_info_btn = document.getElementById('b_info');
+
+        // Get URL parameters if needed
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name'); // Extract "name" from URL if present
+
+        b_info_btn.addEventListener("click", async (event) => {
+            // Prevent default form submission behavior
+            event.preventDefault();
+
+            const Bname = document.getElementById('b_name').value;
+            const size = document.getElementById('size_sqft').value;
+            const location = document.getElementById('location').value;
+
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            const raw = JSON.stringify({
+                "building_name": Bname,
+                "size_sqft": size,
+                "location": location,
+                "user": name
+            });
+
+            const requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: raw,
+                redirect: "follow"
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/createrow", requestOptions);
+                const result = await response.text();
+                console.log(result);
+
+                // Redirect to the next page after fetch completes successfully
+                window.location.href = `db_buildingfeatures.html?Bname=${encodeURIComponent(Bname)}`;
+            } catch (error) {
+                console.error("Error occurred during fetch:", error);
+            }
+        });
+    </script>
+</body>
+</html>
